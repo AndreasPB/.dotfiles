@@ -4,16 +4,22 @@ filetype plugin indent on
 set number
 set nowrap
 set bg=dark
-" show existing tab with 4 spaces width
-set tabstop=4
-" when indenting with '>', use 4 spaces width
+set tabstop=4 softtabstop=4
 set shiftwidth=4
-" On pressing tab, insert 4 spaces
 set expandtab
+set hidden
+set smartindent
+set noswapfile
+set nobackup
+set undodir=/.vim/undodir
+set undofile
+set incsearch
+set scrolloff=8
 
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
 Plug 'dag/vim-fish'
 Plug 'preservim/nerdtree'
@@ -47,17 +53,30 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
+nmap <leader>gd <Plug>(coc-definition)
+nmap <leader>gr <Plug>(coc-references)
+
+
 nnoremap <leader>cl :CocDiagnostics<cr>
 nnoremap <leader>cf :CocFix<cr>
 nnoremap <leader>ch :call CocAction('doHover')<cr>
 
-nmap <Leader>F :FZF<cr>
-nmap <Leader>ff :FZF<cr>
-nmap <Leader>fh :FZF ~<cr>
-nmap <Leader>fc :FZF ~/.config<cr>
-nmap <Leader>fr :FZF ~/Repo<cr>
+nnoremap <C-p> :GFiles<cr>
+nnoremap <Leader>F :FZF<cr>
+nnoremap <Leader>ff :FZF<cr>
+nnoremap <Leader>fh :FZF ~<cr>
+nnoremap <Leader>fc :FZF ~/.config<cr>
+nnoremap <Leader>fr :FZF ~/Repo<cr>
 
 " vim-airline
+" tabline
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#show_splits = 0
+let g:airline#extensions#tabline#switch_buffers_and_tabs = 0
+let g:airline#extensions#tabline#show_buffers = 1
+let g:airline#extensions#tabline#buffer_nr_show = 1 
+let g:airline#extensions#tabline#show_tab_nr = 0
+
 if !exists('g:airline_symbols')
  let g:airline_symbols = {}
 endif
