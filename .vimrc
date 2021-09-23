@@ -44,6 +44,12 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~ '\s'
 endfunction
 
+fun! TrimWhitespace()
+    let l:save = winsaveview()
+    keeppatterns %s/\s\+$//e
+    call winrestview(l:save)
+endfun
+
 " Leader
 let mapleader = ' '
 
@@ -53,14 +59,17 @@ inoremap <silent><expr> <Tab>
       \ <SID>check_back_space() ? "\<Tab>" :
       \ coc#refresh()
 
+" remove trailing whitespaces
+nnoremap <Leader>w :call TrimWhitespace()<cr>
+
+" coc/sourcery
 nmap <leader>gd <Plug>(coc-definition)
 nmap <leader>gr <Plug>(coc-references)
-
-
 nnoremap <leader>cl :CocDiagnostics<cr>
 nnoremap <leader>cf :CocFix<cr>
 nnoremap <leader>ch :call CocAction('doHover')<cr>
 
+" fzf
 nnoremap <C-p> :GFiles<cr>
 nnoremap <Leader>F :FZF<cr>
 nnoremap <Leader>ff :FZF<cr>
@@ -74,7 +83,7 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#show_splits = 0
 let g:airline#extensions#tabline#switch_buffers_and_tabs = 0
 let g:airline#extensions#tabline#show_buffers = 1
-let g:airline#extensions#tabline#buffer_nr_show = 1 
+let g:airline#extensions#tabline#buffer_nr_show = 1
 let g:airline#extensions#tabline#show_tab_nr = 0
 
 if !exists('g:airline_symbols')
