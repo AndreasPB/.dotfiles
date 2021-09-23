@@ -22,6 +22,7 @@ Plug 'neoclide/coc-git'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'jupyter-vim/jupyter-vim'
 Plug 'morhetz/gruvbox'
 Plug 'Lokaltog/powerline-fonts'
 call plug#end()
@@ -55,10 +56,6 @@ nmap <Leader>ff :FZF<cr>
 nmap <Leader>fh :FZF ~<cr>
 nmap <Leader>fc :FZF ~/.config<cr>
 nmap <Leader>fr :FZF ~/Repo<cr>
-
-"*****************************************************************************
-"" Convenience variables
-"*****************************************************************************
 
 " vim-airline
 if !exists('g:airline_symbols')
