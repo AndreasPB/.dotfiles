@@ -18,3 +18,10 @@ git clone https://github.com/powerline/fonts
 cd fonts/
 ./install.sh
 ```
+
+### Must have terminal tools
+* fish - https://github.com/fish-shell/fish-shell
+* starship https://github.com/starship/starship
+* z - https://github.com/ajeetdsouza/zoxide
+* fzf - https://github.com/junegunn/fzf
+* exa - https://github.com/ogham/exa 
