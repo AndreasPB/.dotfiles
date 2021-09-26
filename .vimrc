@@ -1,6 +1,7 @@
 filetype plugin indent on
 
 " Sets
+set relativenumber
 set number
 set nowrap
 set bg=dark
