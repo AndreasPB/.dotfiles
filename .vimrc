@@ -15,7 +15,7 @@ set nobackup
 set undodir=/.vim/undodir
 set undofile
 set incsearch
-set scrolloff=8
+set scrolloff=12
 
 " Plugins
 call plug#begin('~/.vim/plugged')
