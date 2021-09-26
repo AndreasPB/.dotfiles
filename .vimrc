@@ -37,6 +37,7 @@ call plug#end()
 " Theme
 let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
+hi Normal guibg=NONE ctermbg=NONE
 
 " Funcs
 " use <tab> for trigger completion and navigate to the next complete item
