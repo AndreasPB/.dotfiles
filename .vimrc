@@ -16,12 +16,14 @@ set undodir=/.vim/undodir
 set undofile
 set incsearch
 set scrolloff=12
+set autochdir
 
 " Plugins
 call plug#begin('~/.vim/plugged')
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'evanleck/vim-svelte', {'branch': 'main'}
+Plug 'pangloss/vim-javascript'
 Plug 'dag/vim-fish'
 Plug 'preservim/nerdtree'
 Plug 'tpope/vim-fugitive'
@@ -29,13 +31,12 @@ Plug 'neoclide/coc-git'
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'gruvbox-community/gruvbox'
 Plug 'jupyter-vim/jupyter-vim'
-Plug 'morhetz/gruvbox'
 Plug 'Lokaltog/powerline-fonts'
 call plug#end()
 
 " Theme
-let g:gruvbox_contrast_dark = 'hard'
 colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
 
@@ -73,6 +74,7 @@ nnoremap <leader>ch :call CocAction('doHover')<cr>
 
 " fzf
 nnoremap <C-p> :GFiles<cr>
+nnoremap <C-S-p> :Rg<cr>
 nnoremap <Leader>F :FZF<cr>
 nnoremap <Leader>ff :FZF<cr>
 nnoremap <Leader>fh :FZF ~<cr>
