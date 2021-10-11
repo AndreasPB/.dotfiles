@@ -74,8 +74,7 @@ nnoremap <leader>ch :call CocAction('doHover')<cr>
 
 " fzf
 nnoremap <C-p> :GFiles<cr>
-nnoremap <C-S-p> :Rg<cr>
-nnoremap <Leader>F :FZF<cr>
+nnoremap <Leader>F :Rg<cr>
 nnoremap <Leader>ff :FZF<cr>
 nnoremap <Leader>fh :FZF ~<cr>
 nnoremap <Leader>fc :FZF ~/.config<cr>
