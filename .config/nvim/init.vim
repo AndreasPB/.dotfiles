@@ -131,17 +131,31 @@ runtime ./maps.vim
 
 " true color
 if exists("&termguicolors") && exists("&winblend")
-    syntax enable
+    " syntax enable
     set termguicolors
     set winblend=0
     set wildoptions=pum
-    set pumblend=5
+   set pumblend=5
     set background=dark
 endif
 
 colorscheme gruvbox
 hi Normal guibg=NONE ctermbg=NONE
 
+lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+
 "}}}
 
-" vim: set foldmethod=marker foldlevel=0:
+" Language Servers "{{{
+" ---------------------------------------------------------------------
+lua << EOF
+
+require'lspconfig'.pyright.setup{}
+require'lspconfig'.tsserver.setup{}
+require'lspconfig'.svelte.setup{}
+require'lspconfig'.tailwindcss.setup{}
+require'lspconfig'.rust_analyzer.setup{}
+
+EOF
+
+"}}}
