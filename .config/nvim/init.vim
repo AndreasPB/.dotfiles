@@ -25,7 +25,7 @@ set scrolloff=12
 set expandtab
 set shell=fish
 set backupskip=/tmp/*,/private/tmp/*
-set autochdir
+" set autochdir
 
 " incremental substitution (neovim)
 if has('nvim')
