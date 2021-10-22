@@ -27,6 +27,9 @@ set shell=fish
 set backupskip=/tmp/*,/private/tmp/*
 " set autochdir
 
+" For GitGutter
+set updatetime=750
+
 " incremental substitution (neovim)
 if has('nvim')
     set inccommand=split

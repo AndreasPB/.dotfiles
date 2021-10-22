@@ -1,4 +1,3 @@
-
 if has("nvim")
     let g:plug_home = stdpath('data') . '/plugged'
 endif
@@ -26,8 +25,8 @@ if has("nvim")
     " Plug 'sainnhe/gruvbox-material'
     " Plug 'morhetz/gruvbox'
     Plug 'gruvbox-community/gruvbox'
-    Plug 'wellle/context.vim'
     Plug 'airblade/vim-gitgutter'
+    Plug 'romgrk/nvim-treesitter-context'
 
 endif
 
