@@ -27,6 +27,7 @@ if has("nvim")
     Plug 'gruvbox-community/gruvbox'
     Plug 'airblade/vim-gitgutter'
     Plug 'romgrk/nvim-treesitter-context'
+    Plug 'haskell/haskell-language-server'
 
 endif
 

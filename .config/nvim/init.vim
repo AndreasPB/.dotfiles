@@ -26,6 +26,8 @@ set expandtab
 set shell=fish
 set backupskip=/tmp/*,/private/tmp/*
 " set autochdir
+set splitbelow
+set splitright
 
 " For GitGutter
 set updatetime=750
