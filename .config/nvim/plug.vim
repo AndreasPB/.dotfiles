@@ -10,9 +10,12 @@ Plug 'tpope/vim-rhubarb'
 if has("nvim")
     Plug 'hoob3rt/lualine.nvim'
     Plug 'neovim/nvim-lspconfig'
-    Plug 'hrsh7th/nvim-compe'
-    Plug 'hrsh7th/vim-vsnip'
-    Plug 'hrsh7th/vim-vsnip-integ'
+    " Plug 'hrsh7th/nvim-compe'
+    " Plug 'hrsh7th/vim-vsnip'
+    " Plug 'hrsh7th/vim-vsnip-integ'
+    Plug 'ms-jpq/coq_nvim'
+    Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+    Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
     Plug 'folke/lsp-colors.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
     Plug 'nvim-treesitter/playground'
@@ -28,6 +31,7 @@ if has("nvim")
     Plug 'airblade/vim-gitgutter'
     Plug 'romgrk/nvim-treesitter-context'
     Plug 'haskell/haskell-language-server'
+    
 
 endif
 

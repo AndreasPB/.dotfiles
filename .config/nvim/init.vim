@@ -153,8 +153,10 @@ lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 
 " Language Servers "{{{
 " ---------------------------------------------------------------------
-lua << EOF
 
+let g:coq_settings = { 'auto_start': v:true }
+
+lua << EOF
 require'lspconfig'.pyright.setup{}
 require'lspconfig'.tsserver.setup{}
 require'lspconfig'.svelte.setup{}
