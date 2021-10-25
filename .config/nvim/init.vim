@@ -154,7 +154,7 @@ lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 " Language Servers "{{{
 " ---------------------------------------------------------------------
 
-let g:coq_settings = { 'auto_start': v:true }
+let g:coq_settings = { "auto_start": v:true, "display.icons.mode": "none", "clients.tabnine.enabled": v:true }
 
 lua << EOF
 require'lspconfig'.pyright.setup{}
