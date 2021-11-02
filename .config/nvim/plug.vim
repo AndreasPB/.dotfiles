@@ -10,9 +10,6 @@ Plug 'tpope/vim-rhubarb'
 if has("nvim")
     Plug 'hoob3rt/lualine.nvim'
     Plug 'neovim/nvim-lspconfig'
-    " Plug 'hrsh7th/nvim-compe'
-    " Plug 'hrsh7th/vim-vsnip'
-    " Plug 'hrsh7th/vim-vsnip-integ'
     Plug 'ms-jpq/coq_nvim'
     Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
     Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
@@ -25,9 +22,11 @@ if has("nvim")
     Plug 'windwp/nvim-autopairs'
     Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
-    " Plug 'sainnhe/gruvbox-material'
+    Plug 'sainnhe/gruvbox-material'
     " Plug 'morhetz/gruvbox'
-    Plug 'gruvbox-community/gruvbox'
+    " Plug 'gruvbox-community/gruvbox'
+    " Plug 'rktjmp/lush.nvim'
+    " Plug 'ellisonleao/gruvbox.nvim'
     Plug 'airblade/vim-gitgutter'
     Plug 'romgrk/nvim-treesitter-context'
     Plug 'haskell/haskell-language-server'

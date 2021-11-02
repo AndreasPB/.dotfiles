@@ -8,7 +8,6 @@ if !1 | finish | endif
 
 set nocompatible
 set number
-syntax enable
 set fileencodings=utf-8,sjis,euc-jp,latin
 set encoding=utf-8
 set title
@@ -24,7 +23,7 @@ set laststatus=2
 set scrolloff=12
 set expandtab
 set shell=fish
-set backupskip=/tmp/*,/private/tmp/*
+" set backupskip=/tmp/*,/private/tmp/*
 " set autochdir
 set splitbelow
 set splitright
@@ -85,24 +84,17 @@ nnoremap <Leader>f~ :FZF ~<cr>
 nnoremap <Leader>fc :FZF ~/.config<cr>
 nnoremap <Leader>fr :FZF ~/Repo<cr>
 
-" noremap <C-p> :GFiles<cr>
-
 " Set completeopt to have a better completion experience
 set completeopt=menuone,noinsert,noselect
 
 " Avoid showing message extra message when using completion
-set shortmess+=c
+" set shortmess+=c
 "}}}
 
 " Highlights "{{{
 " ---------------------------------------------------------------------
 set cursorline
-"set cursorcolumn
-
-" Set cursor line color on visual mode
-highlight Visual cterm=NONE ctermbg=236 ctermfg=NONE guibg=Grey40
-
-highlight LineNr cterm=none ctermfg=240 guifg=#2b506e guibg=#000000
+" set cursorcolumn
 
 augroup BgHighlight
     autocmd!
@@ -120,34 +112,28 @@ endif
 " Imports "{{{
 " ---------------------------------------------------------------------
 runtime ./plug.vim
-if has("unix")
-    let s:uname = system("uname -s")
-    " Do Mac stuff
-    if s:uname == "Darwin\n"
-        runtime ./macos.vim
-    endif
-endif
 
-runtime ./maps.vim
 "}}}
 
 " Syntax theme "{{{
 " ---------------------------------------------------------------------
 
-" true color
-if exists("&termguicolors") && exists("&winblend")
-    " syntax enable
-    set termguicolors
-    set winblend=0
-    set wildoptions=pum
-   set pumblend=5
-    set background=dark
-endif
+syntax enable
+set background=dark
+set termguicolors
 
-colorscheme gruvbox
-hi Normal guibg=NONE ctermbg=NONE
+" let g:gruvbox_material_background = "hard"
+let g:gruvbox_material_palette = "original"
+
+colorscheme gruvbox-material
 
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
+
+highlight Normal     ctermbg=NONE guibg=NONE
+highlight LineNr     ctermbg=NONE guibg=NONE
+highlight SignColumn ctermbg=NONE guibg=NONE
+highlight NonText    ctermbg=NONE guibg=NONE
+highlight clear EndOfBuffer
 
 "}}}
 
