@@ -27,6 +27,7 @@ set shell=fish
 " set autochdir
 set splitbelow
 set splitright
+set clipboard^=unnamed,unnamedplus
 
 " For GitGutter
 set updatetime=750
