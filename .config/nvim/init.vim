@@ -149,6 +149,7 @@ require'lspconfig'.tsserver.setup{}
 require'lspconfig'.svelte.setup{}
 require'lspconfig'.tailwindcss.setup{}
 require'lspconfig'.rust_analyzer.setup{}
+require('nvim-autopairs').setup{}
 
 EOF
 
