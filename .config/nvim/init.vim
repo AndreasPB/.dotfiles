@@ -74,6 +74,9 @@ set formatoptions+=r
 " ---------------------------------------------------------------------
 let mapleader = ' '
 
+" Crazy j-j to ESC
+imap jj <Esc>
+
 " This unsets the last search pattern register by hitting return
 nnoremap <CR> :noh<CR><CR>
 
