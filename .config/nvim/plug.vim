@@ -13,7 +13,6 @@ if has("nvim")
     Plug 'ms-jpq/coq_nvim'
     Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
     Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
-    " Plug 'tmsvg/pear-tree'
     Plug 'windwp/nvim-autopairs'
     Plug 'folke/lsp-colors.nvim'
     Plug 'nvim-treesitter/nvim-treesitter', { 'do': ':TSUpdate' }
@@ -32,7 +31,6 @@ if has("nvim")
     Plug 'airblade/vim-gitgutter'
     Plug 'romgrk/nvim-treesitter-context'
     Plug 'haskell/haskell-language-server'
-    
 
 endif
 
