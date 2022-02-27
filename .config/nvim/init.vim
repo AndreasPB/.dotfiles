@@ -20,7 +20,7 @@ set hlsearch
 set showcmd
 set cmdheight=1
 set laststatus=2
-set scrolloff=12
+set scrolloff=15
 set expandtab
 set shell=fish
 " set backupskip=/tmp/*,/private/tmp/*
@@ -28,6 +28,7 @@ set shell=fish
 set splitbelow
 set splitright
 set clipboard^=unnamed,unnamedplus
+
 
 " For GitGutter
 set updatetime=750
@@ -52,8 +53,8 @@ set ignorecase
 set smarttab
 " indents
 filetype plugin indent on
-set shiftwidth=4
-set tabstop=4
+set shiftwidth=2
+set tabstop=2
 set ai "Auto indent
 set si "Smart indent
 set nowrap "No Wrap lines
@@ -126,10 +127,7 @@ syntax enable
 set background=dark
 set termguicolors
 
-" let g:gruvbox_material_background = "hard"
-let g:gruvbox_material_palette = "original"
-
-colorscheme gruvbox-material
+colorscheme gruvbox
 
 lua require'nvim-treesitter.configs'.setup { highlight = { enable = true } }
 
@@ -137,6 +135,7 @@ highlight Normal     ctermbg=NONE guibg=NONE
 highlight LineNr     ctermbg=NONE guibg=NONE
 highlight SignColumn ctermbg=NONE guibg=NONE
 highlight NonText    ctermbg=NONE guibg=NONE
+highlight NonText guifg=bg
 highlight clear EndOfBuffer
 
 "}}}
@@ -153,13 +152,10 @@ require'lspconfig'.svelte.setup{}
 require'lspconfig'.tailwindcss.setup{}
 require'lspconfig'.rust_analyzer.setup{}
 require('nvim-autopairs').setup{}
-
-require'lualine'.setup{
-  options = {
-    icons_enabled = true,
-    theme = 'gruvbox-material',
-  },
-}
+require('gitsigns').setup()
+require('feline').setup({
+    preset = 'default'
+})
 EOF
 
 "}}}
