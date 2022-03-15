@@ -1,5 +1,10 @@
 **.dotfiles and notes**
 
+Change default terminal(what pop shell `super + t` uses):
+```bash
+gsettings set org.gnome.desktop.default-applications.terminal exec <terminal path>
+```
+
 No capslock:
 ```bash
 setxkbmap -option caps:escape
